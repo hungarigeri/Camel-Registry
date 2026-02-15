@@ -20,15 +20,3 @@ Ez a projekt egy két részből álló technikai feladat implementációja: egy 
 
 ---
 
-## 🚀 Gyorsindítás (Quick Start)
-
-### **1. Backend indítása**
-A backend automatikusan létrehozza az SQLite adatbázist (`camels.db`) az első indításkor. Az alkalmazás alapértelmezetten a `5242`-es porton fut.
-
-```bash
-# Lépj be a backend mappába
-cd Backend/CamelRegistry
-
-# Függőségek visszaállítása és futtatás
-dotnet restore
-dotnet run
