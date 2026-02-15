@@ -1,11 +1,34 @@
-🐪 Camel Registry - Full-Stack ApplicationEz a projekt egy tevék (Camels) nyilvántartására szolgáló teljes veremű (full-stack) alkalmazás. A megoldás egy .NET 8 alapú Minimal API backendből és egy modern Angular frontendből áll.🛠 Technológiai StackBackend (/Backend)Keretrendszer: .NET 8.0 (Minimal API)Adatbázis: SQLiteORM: Entity Framework CoreDokumentáció: OpenAPI (Swagger) / SwashbuckleTesztelés: xUnit (Unit tesztek a validációhoz)Frontend (/Frontend)Keretrendszer: Angular 19 (Standalone Components)Stílus: Bootstrap 5Form kezelés: Reactive FormsKommunikáció: HttpClient (REST API)🚀 Telepítés és Futtatás1. Backend indításaA backend automatikusan létrehozza a camels.db adatbázist az első induláskor.Bashcd Backend/CamelRegistry
+# 🐪 Camel Registry - Full-Stack Project
+
+Ez a projekt egy két részből álló technikai feladat implementációja: egy **ASP.NET Core Minimal API** backend és egy **Angular 19** frontend alkalmazás, amely tevék (Camels) nyilvántartására szolgál.
+
+---
+
+## 🛠 Technológiai Stack
+
+### **Backend** (`/Backend`)
+* **Keretrendszer:** .NET 8.0 Minimal API
+* **Adatbázis:** SQLite (Entity Framework Core)
+* **Dokumentáció:** OpenAPI (Swagger UI)
+* **Tesztelés:** xUnit
+
+### **Frontend** (`/Frontend`)
+* **Keretrendszer:** Angular 19 (Standalone components)
+* **Stílus:** Bootstrap 5
+* **Form kezelés:** Reactive Forms
+* **Kommunikáció:** HttpClient
+
+---
+
+## 🚀 Gyorsindítás (Quick Start)
+
+### **1. Backend indítása**
+A backend automatikusan létrehozza az SQLite adatbázist (`camels.db`) az első indításkor. Az alkalmazás alapértelmezetten a `5242`-es porton fut.
+
+```bash
+# Lépj be a backend mappába
+cd Backend/CamelRegistry
+
+# Függőségek visszaállítása és futtatás
 dotnet restore
 dotnet run
-Swagger UI: http://localhost:5242/swagger (A port a launchSettings.json alapján változhat)API végpont: http://localhost:5242/api/camels2. Frontend indításaGyőződj meg róla, hogy a Node.js (v18+) telepítve van.Bashcd Frontend
-npm install
-ng serve
-Elérhetőség: http://localhost:4200Konfiguráció: Az API URL-je az src/environment/enviroment.ts fájlban található.📋 Funkciók és VégpontokAdatmodell (Camel)MezőTípusLeírásIdintEgyedi azonosítóNamestringKötelező, min. 2 karakterColorstringA teve színeHumpCountintCsak 1 vagy 2 lehetLastFedDateTimeAz utolsó etetés idejeAPI VégpontokGET /api/camels - Összes teve listázásaPOST /api/camels - Új teve mentése (validációval)PUT /api/camels/{id} - Adatok frissítéseDELETE /api/camels/{id} - Teve törlése🧪 TesztelésBackend tesztek (xUnit)A projekt tartalmaz egy CamelRegistry.Tests csomagot, amely a validációs logikát ellenőrzi.Bashcd Backend/CamelRegistry.Tests
-dotnet test
-Frontend tesztek (Jasmine/Karma)A form validációk és a szolgáltatások ellenőrzéséhez:Bashcd Frontend
-ng test
-✅ Elfogadási Kritériumok (Definition of Done)[x] Az alkalmazás lefordul és futtatható.[x] Az SQLite adatbázis és táblák automatikusan létrejönnek.[x] Teljes CRUD működés (Létrehozás, Listázás, Szerkesztés, Törlés).[x] Swagger UI felület az API teszteléséhez.[x] Reaktív űrlapok Bootstrap hibaüzenetekkel és validációval.[x] Sikerült legalább egy unit teszt a backend és frontend oldalon is.
